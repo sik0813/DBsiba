@@ -12,9 +12,8 @@ legend {
 }
 
 fieldset {
-	padding-left: 25%;
+	text-align: center;
 }
-
 label {
 	marign: 5%;
 }
@@ -29,14 +28,21 @@ label {
 		<fieldset>
 			<legend>
 				<b>군수품 정비 시스템</b>
-			</legend>
-			<span>군번 : <input type="text" name="userID" size="20"
-				placeholder="00-00000000"></span> <label> PassWord : <input
-				type="password" name="userPassword" size="20"></label> 신청자 <input
-				type="radio" name="role" value="1"> 정비사 <input type="radio"
-				name="role" value="2"><br> <label><input
-				type="SUBMIT" name="Submit" value="로그인"> <input type="RESET"
-				value="취소"> </label>
+			</legend><br><br>
+			<div>
+				신청자 <input type="radio" name="role" value="1" checked="checked">
+				정비사 <input type="radio" name="role" value="2"><br>
+
+			<br>
+
+				군번 : <input type="text" name="userID" size="20" placeholder="00-00000000">
+				PassWord : <input type="password" name="userPassword" size="20"><br>
+
+			<br>
+
+				<input type="SUBMIT" name="Submit" value="로그인">
+				<input type="RESET" value="취소">
+			</div>
 		</fieldset>
 	</form>
 </body>

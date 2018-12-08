@@ -34,6 +34,62 @@ function button_event(){
 		{
 		return;
 		}
+    function itemChange1(var input){
+
+        var keyboard = ["갈축","청축","적축"];
+        var mouse = ["광마우스","유선마우스","비싼마우스","미키마우스"];
+        var monitor = ["17인치","22인치","24인치","26인치"];
+
+        var selectItem = $("#first").val();
+
+        var changeItem;
+
+        if(selectItem == "키보드"){
+            changeItem = keyboard;
+        }
+        else if(selectItem == "마우스"){
+            changeItem = mouse;
+        }
+        else if(selectItem == "모니터"){
+            changeItem =  monitor;
+        }
+
+        $('#second').empty();
+
+        for(var count = 0; count < changeItem.size(); count++){
+            var option = $("<option>"+changeItem[count]+"</option>");
+            $('#select2').append(option);
+        }
+
+    }
+    function itemChange2(){
+
+        var keyboard = ["갈축","청축","적축"];
+        var mouse = ["광마우스","유선마우스","비싼마우스","미키마우스"];
+        var monitor = ["17인치","22인치","24인치","26인치"];
+
+        var selectItem = $("#first").val();
+
+        var changeItem;
+
+        if(selectItem == "키보드"){
+            changeItem = keyboard;
+        }
+        else if(selectItem == "마우스"){
+            changeItem = mouse;
+        }
+        else if(selectItem == "모니터"){
+            changeItem =  monitor;
+        }
+
+        $('#second').empty();
+
+        for(var count = 0; count < changeItem.size(); count++){
+            var option = $("<option>"+changeItem[count]+"</option>");
+            $('#select2').append(option);
+        }
+
+    }
 }</script>
 </head>
 <%
@@ -86,7 +142,7 @@ function button_event(){
 				rs = helper.classSearch(1);
 				Vector<classification_DAO> class_sV = new Vector<classification_DAO>();
 				while (rs.next()) {
-					classification_DAO temp = new classification_DAO(rs.getString("second_name"), rs.getInt("second_code"));
+					classification_DAO temp = new classification_DAO(rs.getString("second_name"), rs.getInt("second_code"), rs.getInt("first_code"));
 					class_sV.add(temp);
 				}
 			%>
@@ -111,7 +167,7 @@ function button_event(){
 				rs = helper.classSearch(2);
 				Vector<classification_DAO> class_tV = new Vector<classification_DAO>();
 				while (rs.next()) {
-					classification_DAO temp = new classification_DAO(rs.getString("third_name"), rs.getInt("third_code"));
+					classification_DAO temp = new classification_DAO(rs.getString("third_name"), rs.getInt("third_code"), rs.getInt("second_code"));
 					class_tV.add(temp);
 				}
 			%>
