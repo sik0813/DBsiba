@@ -11,6 +11,7 @@
 	String option1 = request.getParameter("first");
 	String option2 = request.getParameter("second");
 	String option3 = request.getParameter("third");
+	String result = "";
 	DBhelper helper = new DBhelper();
 	ResultSet rs = helper.itemSearch(Integer.parseInt(option1), Integer.parseInt(option2),
 			Integer.parseInt(option3));
@@ -22,10 +23,20 @@
 </script>
 <%
 	} else {
-		helper.insert(name, date, applicator_id, applicator_name);
+	    /*insertCarschedule(
+                            application_title,
+                            application_date,
+                            applicator_group_number,
+                            applicator_name,
+                            item_no,
+                            item_name,
+                            content,
+                            result OUT VARCHAR2
+                            )*/
+		result = helper.insert(name, date, applicator_id, applicator_name);
 %>
 <script>
-	alert("신청되었습니다!!");
+	alert(<%= result %>);
 	location.href="applicationMain.jsp";
 </script>
 <%
