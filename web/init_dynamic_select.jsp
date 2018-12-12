@@ -22,8 +22,8 @@
         String temp = class_V.get(i).getName();
         int code = class_V.get(i).getNo();
         result += "{ " +
-                "id: \"" + code + "\", " + // id 속성 추가
-                "value: \"" + temp + "\" " + // value 속성 추가
+                "\"id\" : \"" + Integer.toString(code) + "\", " + // id 속성 추가
+                "\"value\" : \"" + temp + "\" " + // value 속성 추가
                 "} ";
         if(i < class_V.size()-1)
             result += ","; // 마지막 값이 아니면 , 추가

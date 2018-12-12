@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>신청서</title>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <style>
 table {
 	border-collapse: collapse;
@@ -62,54 +62,11 @@ function button_event(){
     }
 }
 </script>
-<script>
-//onSelectChange(null, $('#first'));
 
-//Select Box 값이 변경되었을 때 사용하는 이벤트
-//srcElement 값을 보내고 destElement 값을 업데이트 한다
-//JSON 방식으로 return data 를 얻어오는 Ajax 방식
-function onSelectChange(srcElement, destElement)
-{
-    if (srcElement == null) {
-        $.getJSON(destElement.attr("id") + "_dynamic_select" +".jsp", // 파일명을 id 의 조합으로 사용
-            { value: 0 }, // 전달할 데이터
-            function(data) { // callback 후 수행할 부분
-                destElement.empty(); // 도메인 리스트를 비운 후
-                // 기본값인 도메인선택을 추가
-                destElement.append("<option value='" + "" + "'>" + destElement.attr("name") + "</option>");
-                // 넘겨받은 data 에 대한 항목들을 추가
-                for(var index=0 ; index < data.length ; index++) {
-                    destElement.append("<option value='" + data[index].id + "'>" + data[index].value + "</option>");
-                }
-                destElement.removeAttr("disabled"); // 도메인 리스트 활성화
-            });
-    }
-    if (srcElement != null) {
-        var selectedValue = srcElement.val(); // 선택된 값을 얻어온다.
-        if (selectedValue == "") { // "" 일 경우 아무 동작도 하지 않는다.
-            return;
-        }
-        alert(selectedValue);
-
-// id 의 조합으로 파일명 사용
-        $.getJSON(srcElement.attr("id") + "_dynamic_select.jsp",
-            { value: selectedValue }, // 전달되는 인자. 선택된 값
-            function(data) { // callback 후 수행부분
-                destElement.empty(); // 프로젝트 리스트를 비운 후 기본 프로젝트선택을 추가하고
-                destElement.append("<option value='" + "" + "'>" + '::  선택  ::' + "</option>");// 넘겨받은 data 를 추가한다.
-                for(var index=0;index<data.length;index++) {
-                    destElement.append("<option value='" + data[index].id + "'>" + data[index].value + "</option>");
-                }
-                destElement.removeAttr("disabled"); // 프로젝트 리스트 활성화
-            });
-    }
-}
-
-</script>
 </head>
 <%
     DBhelper helper = new DBhelper();
-	ResultSet rs = helper.classSearch(0, "");
+	ResultSet rs = helper.classSearch(0, "0");
 	Vector<classification_DAO> class_V = new Vector<classification_DAO>();
 	while (rs.next()) {
 		classification_DAO temp = new classification_DAO(rs.getString("first_name"), rs.getInt("first_code"));
@@ -118,6 +75,67 @@ function onSelectChange(srcElement, destElement)
 	rs.close();
 %>
 <body>
+<script>
+    //Select Box 값이 변경되었을 때 사용하는 이벤트
+    //srcElement 값을 보내고 destElement 값을 업데이트 한다
+    //JSON 방식으로 return data 를 얻어오는 Ajax 방식
+    document.write("test");
+    function onSelectChange(srcElement, destElement)
+    {
+
+        if (srcElement == null) {
+            $.ajax(
+                {
+                    type: "GET",
+                    url: "init_dynamic_select.jsp",
+                    data: {value : 0},
+                    dataType: "JSON",
+                    error: function () {
+                        alert("실패");
+                    },
+                    success: function (data) { // callback 후 수행할 부분
+                        //document.write(data.length);
+                        //alert("성공");
+                        destElement.empty(); // 도메인 리스트를 비운 후 기본값인 도메인선택을 추가
+
+                        destElement.append("<option value=" + "" + ">::  선택  ::</option>");// 넘겨받은 data 에 대한 항목들을 추가
+                        for (var index = 0; index < data.length; index++) {
+                            destElement.append("<option value=" + data[index].id + ">" + data[index].value + "</option>");
+                        }
+                        destElement.removeAttr("disabled"); // 도메인 리스트 활성화
+                    }
+                }
+            )
+        }
+        if (srcElement != null) {
+            var selectedValue = srcElement.val(); // 선택된 값을 얻어온다.
+            if (selectedValue == "") { // "" 일 경우 아무 동작도 하지 않는다.
+                return;
+            }// id 의 조합으로 파일명 사용
+            $.ajax(
+                {
+                    type: "GET",
+                    url: srcElement.attr("id") + "_dynamic_select.jsp",
+                    data: {value : selectedValue},
+                    dataType: "JSON",
+                    error: function () {
+                        alert("실패");
+                    },
+                    success: function (data) { // callback 후 수행할 부분
+                        //alert("성공");
+                        destElement.empty(); // 도메인 리스트를 비운 후 기본값인 도메인선택을 추가
+                        destElement.append("<option value=" + "" + ">::  선택  ::</option>");// 넘겨받은 data 에 대한 항목들을 추가
+                        for (var index = 0; index < data.length; index++) {
+                            destElement.append("<option value=" + data[index].id + ">" + data[index].value + "</option>");
+                        }
+                        destElement.removeAttr("disabled"); // 도메인 리스트 활성화
+                    }
+                }
+            )
+        }
+    }
+
+</script>
 	<h1 align="center">
 		<b>신청서</b>
 		<hr>
@@ -171,15 +189,16 @@ function onSelectChange(srcElement, destElement)
             </tr>
 		</table>
         <script>
+            onSelectChange(null, $('#first'));
             //도메인 선택시 - 프로젝트 업데이트
-            $('#first').change(function(){ // first 리스트 값 변경시
-                onSelectChange($(this),$('#second')); // second 리스트를 업데이트
+            $('#first').change(function(){ // first 리스트 값 변경
+                onSelectChange($('#first'),$('#second')); // second 리스트를 업데이트
             });
             $('#second').change(function(){ // second 리스트 값 변경시
-                onSelectChange($(this),$('#third')); // third 리스트를 업데이트
+                onSelectChange($('#second'),$('#third')); // third 리스트를 업데이트
             });
             $('#third').change(function(){ // third 리스트 값 변경시
-                onSelectChange($(this),$('#item_list')); // item_list 리스트를 업데이트
+                onSelectChange($('#third'),$('#item_list')); // item_list 리스트를 업데이트
             });
         </script>
 		<div align="center"><input type="submit" id="application" value="신청" > <input

@@ -6,18 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9dfb216-c70c-46b4-913b-0d48c25510ee" name="Default Changelist" comment="코드 진화">
-      <change afterPath="$PROJECT_DIR$/web/init_dynamic_select.jsp" afterDir="false" />
+    <list default="true" id="f9dfb216-c70c-46b4-913b-0d48c25510ee" name="Default Changelist" comment="동적에 희망이...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project_army/example/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Control.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DBhelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/classification_DAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/project_army/Control.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/project_army/DBhelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/project_army/classification_DAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBhelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBhelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project_army/DBhelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/project_army/DBhelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/application.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/application.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/first_dynamic_select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/first_dynamic_select.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/init_dynamic_select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/init_dynamic_select.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/second_dynamic_select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/second_dynamic_select.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/third_dynamic_select.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/third_dynamic_select.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,29 +38,29 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="" value="1" />
-          <entry key="java" value="8" />
-          <entry key="jsp" value="18" />
+          <entry key="java" value="14" />
+          <entry key="jsp" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="8" />
-          <entry key="JSP" value="18" />
+          <entry key="JAVA" value="14" />
+          <entry key="JSP" value="21" />
           <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="804" />
-          <entry key="jsp" value="1716" />
-          <entry key="txt" value="39" />
+          <entry key="java" value="929" />
+          <entry key="jsp" value="2707" />
+          <entry key="txt" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="804" />
-          <entry key="JSP" value="1716" />
-          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="JAVA" value="929" />
+          <entry key="JSP" value="2707" />
+          <entry key="PLAIN_TEXT" value="55" />
         </counts>
       </usages-collector>
     </session>
@@ -73,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state>
               <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
@@ -88,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/application.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="93">
+              <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
               <folding>
                 <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
               </folding>
@@ -103,8 +100,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/init_dynamic_select.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            <state relative-caret-position="342">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding>
+                <element signature="e#585#605#0#JAVA" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/first_dynamic_select.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
               <folding>
                 <element signature="e#581#601#0#JAVA" expanded="true" />
               </folding>
@@ -112,14 +121,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/first_dynamic_select.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/second_dynamic_select.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+            <state relative-caret-position="264">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding>
-                <element signature="e#581#601#0#JAVA" expanded="true" />
+                <element signature="e#658#678#0#JAVA" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/third_dynamic_select.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding>
+                <element signature="e#619#639#0#JAVA" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DBhelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="91" selection-start-line="91" selection-end-line="91" />
             </state>
           </provider>
         </entry>
@@ -151,9 +181,12 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/classes/classification_DAO.java" />
         <option value="$PROJECT_DIR$/web/application_dynamic_select.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/classes/DBhelper.java" />
-        <option value="$PROJECT_DIR$/web/application.jsp" />
+        <option value="$PROJECT_DIR$/src/DBhelper.java" />
         <option value="$PROJECT_DIR$/web/init_dynamic_select.jsp" />
         <option value="$PROJECT_DIR$/web/first_dynamic_select.jsp" />
+        <option value="$PROJECT_DIR$/web/second_dynamic_select.jsp" />
+        <option value="$PROJECT_DIR$/web/third_dynamic_select.jsp" />
+        <option value="$PROJECT_DIR$/web/application.jsp" />
       </list>
     </option>
   </component>
@@ -216,6 +249,11 @@
             <path>
               <item name="project_army" type="b2602c69:ProjectViewProjectNode" />
               <item name="project_army" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project_army" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project_army" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -234,7 +272,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544588193738" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544604664448" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -260,7 +298,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.login.jsp">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.35" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
@@ -322,6 +360,79 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="application.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.35" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/application.jsp" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="project_army:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_project_army" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3420" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="project_army:war exploded" />
+        </option>
       </method>
     </configuration>
     <configuration name="login.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 8.5.35" ALTERNATIVE_JRE_ENABLED="false">
@@ -396,9 +507,14 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.login.jsp" />
+      <item itemvalue="Tomcat Server.application.jsp" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Tomcat Server.login.jsp" />
+        <item itemvalue="Tomcat Server.application.jsp" />
       </list>
     </recent_temporary>
   </component>
@@ -415,7 +531,7 @@
       <workItem from="1544158447460" duration="8720000" />
       <workItem from="1544229113376" duration="1119000" />
       <workItem from="1544448701210" duration="31539000" />
-      <workItem from="1544575331769" duration="9215000" />
+      <workItem from="1544575331769" duration="25072000" />
     </task>
     <task id="LOCAL-00001" summary="민석이의 초기코드">
       <created>1544166391767</created>
@@ -438,34 +554,41 @@
       <option name="project" value="LOCAL" />
       <updated>1544543616440</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="동적에 희망이...">
+      <created>1544588297015</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544588297015</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50593000" />
+    <option name="totallyTimeSpent" value="66450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21588486" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.21588486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="Web" order="7" sideWeight="0.50161815" side_tool="true" weight="0.21588486" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" visible="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840087" weight="0.3995657" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4936034" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4968017" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" weight="0.32899022" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5042644" side_tool="true" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49840087" weight="0.32899022" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5063966" side_tool="true" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32899022" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" sideWeight="0.49946696" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -491,7 +614,15 @@
     <MESSAGE value="민석이의 초기코드" />
     <MESSAGE value="코드 진화" />
     <MESSAGE value="AJAX두번째" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJAX두번째" />
+    <MESSAGE value="동적에 희망이..." />
+    <option name="LAST_COMMIT_MESSAGE" value="동적에 희망이..." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="pageContext" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/example/HelloWorld.java" />
@@ -509,7 +640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state>
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
@@ -518,21 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/third_dynamic_select.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/second_dynamic_select.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/application_verify.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -560,32 +676,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/application.jsp">
+    <entry file="file://$PROJECT_DIR$/src/project_army/DBhelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classification_DAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="33" />
-          <folding>
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-          </folding>
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBhelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application_verify.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/init_dynamic_select.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="342">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
-            <element signature="e#581#601#0#JAVA" expanded="true" />
+            <element signature="e#585#605#0#JAVA" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/first_dynamic_select.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="285">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
             <element signature="e#581#601#0#JAVA" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/second_dynamic_select.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="e#658#678#0#JAVA" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/third_dynamic_select.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding>
+            <element signature="e#619#639#0#JAVA" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/application.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+          <folding>
+            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
