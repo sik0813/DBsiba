@@ -68,17 +68,17 @@ public class DBhelper {
     }
 
     // 1��,2��,3���з��� �����ϴ� �Լ�
-    public ResultSet classSearch(int flag, int limit) {
+    public ResultSet classSearch(int flag, String limit) {
         String[] list = { "first_classification", "second_classification", "third_classification", "item_list"};
         String sql = "";
         if(flag == 0)
             sql = "select * from " + list[flag];
         else if(flag == 1)
-            sql = "select * from " + list[flag] + "where first_code=" + limit;
+            sql = "select * from " + list[flag] + "where first_code=" +  Integer.parseInt(limit);
         else if(flag == 2)
-            sql = "select * from " + list[flag] + "where second_code=" + limit;
+            sql = "select * from " + list[flag] + "where second_code=" + Integer.parseInt(limit);
         else if(flag == 3)
-            sql = "select * from " + list[flag] + "where third_code=" + limit;
+            sql = "select * from " + list[flag] + "where third_code=" + Integer.parseInt(limit);
         try {
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
