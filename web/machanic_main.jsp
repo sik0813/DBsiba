@@ -30,27 +30,35 @@
 	<table align="center" border="1">
 		<tr>
 			<td>신청 번호</td>
-			<td>물품 이름</td>
+			<td>신청서 제목</td>
 			<td>입고된 날짜</td>
 			<td>신청자 이름</td>
 			<td>물품 상태</td>
+			<td width="500px" align="center">상세 내용</td>
 		</tr>
 		<%
 			DBhelper helper = new DBhelper();
 			String userId = (String) session.getAttribute("user");
 			ResultSet rs = helper.armySearch(userId);
 			String status = null;
+			int int_status = 0;
 			int app_no = 0;
+			String content = "";
 			String application_name = null;
 			String applicator_name = null;
 			Date applicate_date = null;
 			try {
+			    String[] list = {"신청완료", "입고", "처리중", "처리완료"};
 				while (rs.next()) {
 					app_no = rs.getInt("app_no");
 					application_name = rs.getString("application_title");
 					applicator_name = rs.getString("applicator_name");
 					applicate_date = rs.getDate("application_date");
 					status = rs.getString("item_status");
+					content = rs.getString("content");
+					int_status = Integer.parseInt(status.trim());
+					status = list[int_status];
+
 		%>
 		<tr>
 			<td align="center"><%=app_no%></td>
@@ -58,6 +66,7 @@
 			<td align="center"><%=applicate_date%></td>
 			<td align="center"><%=applicator_name%></td>
 			<td align="center"><%=status%></td>
+			<td align="center"><%=content%></td>
 		</tr>
 	<%
 		}

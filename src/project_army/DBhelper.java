@@ -31,7 +31,7 @@ public class DBhelper {
         }
     }
 
-    // �α��� �Ҷ� Ž���ϴ� �Լ�
+    // ?α??? ??? ?????? ???
     public ResultSet search(String id, String pwd, String flag) {
         String sql = null;
         if (flag.equals("1"))
@@ -52,9 +52,9 @@ public class DBhelper {
 
     }
 
-    // ��û���� ���̴� �Լ�
+    // ??u???? ????? ???
     public ResultSet search(String id) {
-        String sql = "select * from application_history where applicator_group_number=? order by app_no";
+        String sql = "select * from application_history inner join applications on application_history.app_no = applications.app_no where applicator_group_number=? order by application_history.app_no";
         try {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
@@ -67,7 +67,7 @@ public class DBhelper {
 
     }
 
-    // 1��,2��,3���з��� �����ϴ� �Լ�
+    // 1??,2??,3???з??? ??????? ???
     public ResultSet classSearch(int flag, String limit) {
         String[] list = { "first_classification", "second_classification", "third_classification", "item_list"};
         String sql = "";
@@ -92,7 +92,7 @@ public class DBhelper {
         return rs;
     }
 
-    // ��ǰ 1��,2��,3�� �з��� �ɷ��� ���õ� ��ǰ�� ã�� �Լ�
+    // ??? 1??,2??,3?? ?з??? ????? ???o? ????? a?? ???
     public ResultSet itemSearch(int op1, int op2, int op3) {
         String sql = "select * from item_list where first_code = ? and second_code = ? and third_code =? ";
         try {
@@ -108,8 +108,8 @@ public class DBhelper {
         return rs;
     }
 
-    // ��û�� �߰�
-    public String insert(String name, String date, String user, String applicator_name) {
+    // ??u?? ???
+    public String insert(String name, String date, String user, String item_no, String item_name, String content) {
         Date d = Date.valueOf(date);
         String result = "";
 		/*insertCarschedule(
@@ -128,20 +128,21 @@ public class DBhelper {
             cstmt.setString(1, name); //title
             cstmt.setDate(2, d); //date
             cstmt.setString(3, user); //group number
-            cstmt.setString(4, user); //item no
-            cstmt.setString(5, user); //item name
-            cstmt.setString(6, user); //content
+            cstmt.setString(4, item_no); //item no
+            cstmt.setString(5, item_name); //item name
+            cstmt.setString(6, content); //content
             cstmt.registerOutParameter(7, java.sql.Types.VARCHAR); //result
             cstmt.execute();
             result = cstmt.getString(7);
-            return "��û�� �Ϸ� �Ǿ����ϴ�.";
-        } catch (SQLException ex) {
-            ex.printStackTrace();
             return result;
+        } catch (SQLException ex) {
+            //ex.printStackTrace();
+            return ex.getMessage();
         }
+
     }
 
-    // �δ� �����ڵ带 �̿��Ͽ� ��û ������ ã�� �Լ�
+    // ?δ? ??????? ?????? ??u ?????? a?? ???
     public ResultSet armySearch(String user) {
         String sql = "select maintenance_army_code from mechanic where mechanic_group_no=?";
         int army_code = 0;
@@ -157,7 +158,8 @@ public class DBhelper {
             e.printStackTrace();
         }
         // System.out.println(army_code);
-        String sql1 = "select * from application_history where maintenance_army_code=? order by app_no";
+
+        String sql1 = "select * from application_history inner join applications on application_history.app_no = applications.app_no where maintenance_army_code=? order by application_history.app_no";
         try {
             pstmt = conn.prepareStatement(sql1);
             pstmt.setInt(1, army_code);
@@ -169,7 +171,7 @@ public class DBhelper {
         return rs;
     }
 
-    // ���� �˱����� �Լ�
+    // ???? ??????? ???
     public int getRow(String user) {
         String sql = "select maintenance_army_code from mechanic where mechanic_group_no =?";
         int army_code = 0;
@@ -187,7 +189,7 @@ public class DBhelper {
         String sql1 = "select * from application_history where maintenance_army_code=?";
         int index = 0;
         try {
-            // application_history �÷����� �˱����� ����
+            // application_history ?÷????? ??????? ????
             pstmt = conn.prepareStatement(sql1, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             pstmt.setInt(1, army_code);
             rs = pstmt.executeQuery();
@@ -200,21 +202,27 @@ public class DBhelper {
     }
 
     public Boolean update(Vector<Integer> v) {
-        String[] temp = { "�԰�", "ó����", "ó���Ϸ�" };
+        String[] temp = {"신청완료", "입고","처리중","처리완료" };
         Vector<String> t = new Vector<String>();
-
-        for(int i = 0 ; i< v.size();i++) {
-            t.add(i, temp[v.get(i)]);
-        }
-
+        System.out.println("update 시작");
+        //for(int i = 0 ; i< v.size();i++) {
+        //    t.add(i, temp[v.get(i)]);
+        //}
         String sql = "update application_history set item_status=? where app_no=?";
-
+        String sql2 = "update wear_history set item_status=? where app_no=?";
         try {
 
+            pstmt = conn.prepareStatement(sql2);
+            for (int i = 0; i < v.size(); i++) {
+                System.out.println(Integer.toString(v.get(i)));
+                pstmt.setString(1, Integer.toString(v.get(i)));
+                pstmt.setInt(2, i+1);
+                int flag = pstmt.executeUpdate();
+            }
             pstmt = conn.prepareStatement(sql);
             for (int i = 0; i < v.size(); i++) {
-                System.out.println(t.get(i));
-                pstmt.setString(1,t.get(i));
+                System.out.println(Integer.toString(v.get(i)));
+                pstmt.setString(1, Integer.toString(v.get(i)));
                 pstmt.setInt(2, i+1);
                 int flag = pstmt.executeUpdate();
             }

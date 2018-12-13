@@ -7,7 +7,7 @@ public class Control {
 	private Connection conn;
 	private ResultSet rs;
 
-	// DB¸¦ ¿¬°áÇÒ ½Ã¿¡ Ã³À½¿¡ ½ÇÇàÇÏ´Â ÇÔ¼ö
+	// DBë¥¼ ì—°ê²°í•  ì‹œì— ì²˜ìŒì— ì‹¤í–‰í•˜ëŠ” í•¨ìˆ˜
 	public void init() {
 		Connection conn = null;
 		pstmt = null;
@@ -29,7 +29,7 @@ public class Control {
 		}
 	}
 
-	// ·Î±×ÀÎ ½Ã ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ ºñ±³ÇÏ¿© Ã£´Â ÇÔ¼ö
+	// ë¡œê·¸ì¸ ì‹œ ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ë¹„êµí•˜ì—¬ ì°¾ëŠ” í•¨ìˆ˜
 	public String Search(String id, String pwd) {
 		String sql = "select s_name from student where id=? and pwd=? ";
 		String temp = null;

@@ -26,32 +26,6 @@ div {
 	margin-top: 10px;
 }
 </style>
-<script>
-	var fn_ajax_sub = {
-		fn_html : function(changedObj, changedVal){
-			var targetObj = jQuery("#"+changedObj).attr("onchangeTarget") ;
-			jQuery.post(
-				"application_dynamic_select.jsp",
-				{
-					changedObj : changedObj,
-					changedVal : changedVal,
-					targetObj  : targetObj ,
-					ts : new Date().getTime()
-				},
-				function(html, textStatus){
-					if(textStatus == "success"){
-						jQuery("#"+targetObj).empty();
-						jQuery("#"+targetObj).append(html);
-						if(targetObj != undefined){
-							fn_ajax_sub.fn_html(targetObj, jQuery("#"+targetObj).val(), jQuery("#"+targetObj).attr("onchangeTarget"));
-						}
-					}
-				},
-				"html"
-			);
-		}
-	};
-</script>
 
 <script type="text/javascript">
 function button_event(){
@@ -79,7 +53,6 @@ function button_event(){
     //Select Box 값이 변경되었을 때 사용하는 이벤트
     //srcElement 값을 보내고 destElement 값을 업데이트 한다
     //JSON 방식으로 return data 를 얻어오는 Ajax 방식
-    document.write("test");
     function onSelectChange(srcElement, destElement)
     {
 
@@ -126,7 +99,10 @@ function button_event(){
                         destElement.empty(); // 도메인 리스트를 비운 후 기본값인 도메인선택을 추가
                         destElement.append("<option value=" + "" + ">::  선택  ::</option>");// 넘겨받은 data 에 대한 항목들을 추가
                         for (var index = 0; index < data.length; index++) {
-                            destElement.append("<option value=" + data[index].id + ">" + data[index].value + "</option>");
+                            if(destElement.attr("id") == "item_list")
+                                destElement.append("<option value=" + data[index].id + "!" + data[index].value + ">" + data[index].value +"\(" + data[index].id  + "\)" + "</option>");
+                            else
+                                destElement.append("<option value=" + data[index].id + ">" + data[index].value + "</option>");
                         }
                         destElement.removeAttr("disabled"); // 도메인 리스트 활성화
                     }
@@ -144,7 +120,7 @@ function button_event(){
 	<form action="application_verify.jsp" method="post">
 		<table align="center" border="1">
 			<tr>
-				<td align="center">물품명</td>
+				<td align="center">신청서 제목</td>
 				<td><input type="text" name="name" size="20"></td>
 			</tr>
 			<tr>
@@ -155,11 +131,6 @@ function button_event(){
 				<td align="center">1차분류</td>
 				<td><select name = "first" id="first">
 					<option value="">:: 선택 ::</option>
-                    <%for (int i = 0; i < class_V.size(); i++) {
-                        String temp = class_V.get(i).getName();
-                        int code = class_V.get(i).getNo();%>
-                    <option value="<%=code%>">물품명: <%=temp%></option>
-                    <%}%>
 				</select></td>
 			</tr>
 			<tr>
@@ -186,6 +157,10 @@ function button_event(){
 
 					</select>
                     </td>
+            </tr>
+            <tr>
+                <td>세부 사항</td>
+                <td><textarea cols="30" rows="5" name="content" class="text" placeholder="세부사항을 적어주세요"></textarea></td>
             </tr>
 		</table>
         <script>

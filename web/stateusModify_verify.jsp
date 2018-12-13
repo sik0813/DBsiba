@@ -23,7 +23,7 @@ location.href="machanic_main.jsp";
 <%}else{
 	%>
 	<script>
-	alsert("실패하였습니다");
+	alert("실패하였습니다");
 	location.href="statusModify.jsp";
 	</script>
 	<%} %>

@@ -7,7 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>상태 수정</title>
-
+	<script type="text/javascript">
+        function button_event(){
+            if(confirm("취소하시겠습니까?") == true){
+                location.href="machanic_main.jsp";
+            }else {
+                return;
+            }
+        }
+	</script>
 </head>
 <h1 align="center">상태 수정</h1>
 <body>
@@ -18,11 +26,13 @@
 		int row_count = helper.getRow(userId);
 		int count = 0;
 		String status = null;
+		int int_status = 0;
 		String temp = null;
 		int app_no = 0;
 		String application_name = null;
 		String applicator_name = null;
 		Date applicate_date = null;
+		//item_status = list[Integer.parseInt(item_status)];
 	%>
 	<form action="stateusModify_verify.jsp" method="post">
 		<table align="center" border= "1">
@@ -41,6 +51,7 @@
 						applicator_name = rs.getString("applicator_name");
 						applicate_date = rs.getDate("application_date");
 						status = rs.getString("item_status");
+						int_status = Integer.parseInt(status.trim());
 						temp = "sel" + count;
 			%>
 			<tr>
@@ -52,10 +63,10 @@
 			</tr>
 			<script>
 			var sel = document.getElementById("<%=temp%>");
-			 temp1 = ['입고','처리중','처리완료'];
+			 temp1 = ['신청완료', '입고','처리중','처리완료'];
 				for (var j = 0; j < temp1.length; j++) {
 					var option = document.createElement("option");
-				if(temp1[j] == "<%=status%>".trim())
+				if(j == "<%=int_status%>")
 					option.selected = true;
 				    option.text = temp1[j];
 					option.value = j;
@@ -73,7 +84,7 @@
 		</table>
 		<div align="center" style="margin-top: 10px">
 			<input type="submit" value="상태 제출"> <input type="reset"
-				value="취소">
+				value="취소" onClick="button_event()">
 		</div>
 	</form>
 </body>
